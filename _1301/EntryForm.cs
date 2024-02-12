@@ -25,7 +25,7 @@ namespace _1301
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.Length != 0) 
+            if (textBox1.Text.Length != 0)
             {
                 using (UserContext db = new UserContext(conn))
                 {
@@ -36,7 +36,7 @@ namespace _1301
                     {
                         Hide();
                         MainForm fmMain = new MainForm();
-                        fmMain.ShowDialog();                        
+                        fmMain.ShowDialog();
                     }
                     else
                     {
@@ -51,9 +51,9 @@ namespace _1301
         }
 
         private void SignUpButton_Click(object sender, EventArgs e)
-        {           
+        {
             string passw = textBox1.Text;
-            
+
             if (passw.Length != 0)
             {
                 using (UserContext db = new UserContext(conn))
@@ -91,12 +91,17 @@ namespace _1301
                                 "и нижнего регистров, а также символы @,!");
                         }
                     }
-                }                
+                }
             }
             else
             {
                 MessageBox.Show("Введите пароль");
             }
+        }
+
+        private void EntryForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
